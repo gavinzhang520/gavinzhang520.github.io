@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>git 学习笔记 | Gaivn&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="版本控制器具备的功能Talk is cheap,show me your code.  协同修改  多人并行不悖的修改服务器端的同一个文件   数据备份">
+  <meta name="description" content="版本控制器具备的功能Talk is cheap,show me the code.  协同修改  多人并行不悖的修改服务器端的同一个文件   数据备份">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git 学习笔记">
 <meta property="og:url" content="http://yoursite.com/2020/03/04/git%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Gaivn&#39;s Blog">
-<meta property="og:description" content="版本控制器具备的功能Talk is cheap,show me your code.  协同修改  多人并行不悖的修改服务器端的同一个文件   数据备份">
+<meta property="og:description" content="版本控制器具备的功能Talk is cheap,show me the code.  协同修改  多人并行不悖的修改服务器端的同一个文件   数据备份">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/image-20200305095830311.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200305101125440.png">
@@ -41,9 +41,10 @@
 <meta property="og:image" content="http://yoursite.com/images/image-20200305105541244.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200304173820521.png">
 <meta property="article:published_time" content="2020-03-04T13:31:28.643Z">
-<meta property="article:modified_time" content="2020-03-06T07:39:50.952Z">
+<meta property="article:modified_time" content="2020-03-08T07:55:20.844Z">
 <meta property="article:author" content="Gavin Zhang">
-<meta property="article:tag" content="后端，技术分享，学习笔记，JAVA">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/image-20200305095830311.png">
   
@@ -184,9 +185,40 @@
 		
       </header>
     
+	
+	<!--目录内容-->
+	
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+  </p>
+  <div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#版本控制器具备的功能"><span class="toc-number">1.</span> <span class="toc-text">版本控制器具备的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git的优势"><span class="toc-number">2.</span> <span class="toc-text">git的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git与SVN的区别"><span class="toc-number">3.</span> <span class="toc-text">git与SVN的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目的"><span class="toc-number">4.</span> <span class="toc-text">目的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作流程"><span class="toc-number"></span> <span class="toc-text">工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git基本命令实际操作"><span class="toc-number">1.</span> <span class="toc-text">git基本命令实际操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git基本基本操作小结"><span class="toc-number">2.</span> <span class="toc-text">git基本基本操作小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git初始化基本命令"><span class="toc-number">3.</span> <span class="toc-text">git初始化基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化一个新的git仓库"><span class="toc-number">4.</span> <span class="toc-text">初始化一个新的git仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git管理远程仓库"><span class="toc-number">5.</span> <span class="toc-text">git管理远程仓库</span></a></li></ol>
+   </div>
+   <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+     </script>
+
+	<!--目录内容结束-->
+	
+	
+	
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="版本控制器具备的功能"><a href="#版本控制器具备的功能" class="headerlink" title="版本控制器具备的功能"></a>版本控制器具备的功能</h3><p>Talk is cheap,show me your code.</p>
+        <h3 id="版本控制器具备的功能"><a href="#版本控制器具备的功能" class="headerlink" title="版本控制器具备的功能"></a>版本控制器具备的功能</h3><p>Talk is cheap,show me the code.</p>
 <ul>
 <li><p>协同修改</p>
 <ul>
@@ -500,6 +532,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -634,6 +681,7 @@
     }
 </script>
   </section>
+  
 
 
 
@@ -738,6 +786,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
